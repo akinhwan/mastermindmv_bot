@@ -35,20 +35,32 @@ module.exports = (ctx) => {
   // console.log(diffDays + ' days');
 
   try {
-    switch (diffTime1) {
-      case 28:
-        return ctx.reply(`${order1.join(', ')}`);
-        break;
-      case 35:
-        return ctx.reply(`${order2.join(', ')}`);
-        break;
-      case 42:
-        return ctx.reply(`${order3.join(', ')}`);
-        break;
-      case 49:
-        return ctx.reply(`${order4.join(', ')}`);
-        break;
+    if (diffTime1 % 28 === 0) {
+      return ctx.reply(`${order1.join(', ')}`);
+    } else if (diffTime1 % 35 === 0) {
+      return ctx.reply(`${order2.join(', ')}`);
+    } else if (diffTime1 % 42 === 0) {
+      return ctx.reply(`${order2.join(', ')}`);
+    } else if (diffTime1 % 49 === 0) {
+      return ctx.reply(`${order2.join(', ')}`);
+    } else {
+      return ctx.reply('Theres a bug yo.');
     }
+
+    // switch (diffTime1) {
+    //   case 28:
+    //     return ctx.reply(`${order1.join(', ')}`);
+    //     break;
+    //   case 35:
+    //     return ctx.reply(`${order2.join(', ')}`);
+    //     break;
+    //   case 42:
+    //     return ctx.reply(`${order3.join(', ')}`);
+    //     break;
+    //   case 49:
+    //     return ctx.reply(`${order4.join(', ')}`);
+    //     break;
+    // }
   } catch (e) {
     return ctx.reply(`Error occured`);
   }
