@@ -22,7 +22,7 @@ module.exports = (ctx) => {
 
   const diffTime = Math.abs(nextTuesday - date1);
   console.log(`diff time ${diffTime}`);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
   console.log(`diff days ${diffDays}`);
 
   try {
