@@ -1,25 +1,23 @@
-# Serverless Telegram Bot
+# Serverless Telegram Bot (AKA 'Mastermind Bot')
 
-Create a serverless Telegram Bot with database to keep track of users using Netlify Functions and FaunaDB
+A serverless Telegram Bot to keep track of a group's presentation order using Netlify Functions and Telegraf
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jokarz/netlify-fauna-telegram-bot)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/akinhwan/mastermindmv_bot)
 
 # Getting Started
 
-* Getting Telegram Bot token and FaunaDB key
+* Getting Telegram Bot token
 * Deploy to Netlify
 * Hooking up the Bot
 
-## Getting Telegram Bot token and FaunaDB key
+## Getting Telegram Bot token
 On Telegram, create a new Telegram bot by talking to [@botfather](https://telegram.me/botfather) and thereafter getting the token for the Telegram Bot.
-
-On FaunaDb site, create a collection with the name ```user``` (optionally, generate an index for the collection and specifying the term for the **userId** to be unique). Head to the security section and generate a FaunaDB key for the collection.
 
 ## Deploy to Netlify
 
 Deploy to Netlify either by linking to this repository manually or by clicking the "Deploy to netlify" above.
 
-Remember to fill in the environment variables on netlify - ```TELEGRAM_BOT_TOKEN```, ```FAUNA_SECRET_KEY``` with the token and the secret key obtained respectively
+Remember to fill in the environment variables on netlify - ```TELEGRAM_BOT_TOKEN``` with the token and the secret key obtained respectively
 
 ## Hooking up the Bot
 
@@ -41,9 +39,8 @@ If it is setup correctly it should reponse back with
 
 Afterwhich, YOU ARE DONE!🎉🎉
 
-Try typing ```/start``` to your bot and watch as the user ID of the Telegram user is stored inside your FaunaDB database
+Try typing ```/order``` to your bot and watch as the user ID of the Telegram user is stored inside your FaunaDB database
 
 # Extending Telegram Bot Functionality
 
 This bot uses telegraf.js for its Telegram Bot functionality. Head to its [website](https://telegraf.js.org/#/) to find out how to extend the functionality of the bot you have created :)
-
