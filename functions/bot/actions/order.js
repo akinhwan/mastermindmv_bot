@@ -6,10 +6,7 @@ module.exports = (ctx) => {
   const order3 = ['Sebastien', 'Ethan', 'Andrew', 'Ben'];
   const order4 = ['Ethan', 'Andrew', 'Ben', 'Sebastien'];
 
-  const date1 = new Date('1/5/2021');
-  // const date2 = new Date('1/12/2021');
-  // const date3 = new Date('1/19/2021');
-  // const date4 = new Date('1/26/2021');
+  const referenceDate = new Date('1/5/2021');
 
   // today's date
   let today = new Date();
@@ -18,19 +15,21 @@ module.exports = (ctx) => {
   let yyyy = today.getFullYear();
   today = mm + '/' + dd + '/' + yyyy;
 
+  // the closest Tuesday, which is when Mastermind meets
   let nextTuesday = getNextDayOfWeek(new Date(), 2);
 
-  const diffTime = Math.abs(nextTuesday - date1);
+  // we need diffTime to calculate diffDays
+  const diffTime = Math.abs(nextTuesday - referenceDate);
   console.log(`diff time ${diffTime}`);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
   console.log(`diff days ${diffDays}`);
 
   try {
+    // increments of 4, 5, 6, 7 weeks from referenceDate
     console.log(`modulus 28 ${diffDays % 28}`);
     console.log(`modulus 35 ${diffDays % 35}`);
     console.log(`modulus 42 ${diffDays % 42}`);
     console.log(`modulus 49 ${diffDays % 49}`);
-
     console.log(`${order1.join(', ')}`);
 
     if (diffDays % 28 === 0) {
