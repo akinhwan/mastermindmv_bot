@@ -21,9 +21,18 @@ module.exports = (ctx) => {
   let nextTuesday = getNextDayOfWeek(new Date(), 2);
 
   const diffTime = Math.abs(nextTuesday - date1);
+  console.log(`diff time ${diffTime}`);
   const diffDays = Math.ceil(diffTime1 / (1000 * 60 * 60 * 24));
+  console.log(`diff days ${diffDays}`);
 
   try {
+    console.log(`modulus 28 ${diffDays % 28}`);
+    console.log(`modulus 35 ${diffDays % 35}`);
+    console.log(`modulus 42 ${diffDays % 42}`);
+    console.log(`modulus 49 ${diffDays % 49}`);
+
+    console.log(`${order1.join(', ')}`);
+
     if (diffDays % 28 === 0) {
       return ctx.reply(`${order1.join(', ')}`);
     } else if (diffDays % 35 === 0) {

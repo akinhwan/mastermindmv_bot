@@ -3,7 +3,7 @@ const orderAction = require('./actions/order');
 
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
-bot.order((ctx) => {
+bot.command('order', (ctx) => {
   return orderAction(ctx);
 });
 
