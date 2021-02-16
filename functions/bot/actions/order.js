@@ -14,9 +14,11 @@ module.exports = (ctx) => {
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   let yyyy = today.getFullYear();
   today = mm + '/' + dd + '/' + yyyy;
+  console.log(today);
 
   // the closest Tuesday, which is when Mastermind meets
   let nextTuesday = getNextDayOfWeek(new Date(), 2);
+  console.log(nextTuesday);
 
   // we need diffTime to calculate diffDays
   const diffTime = Math.abs(nextTuesday - referenceDate);
@@ -37,7 +39,7 @@ module.exports = (ctx) => {
     } else if (diffDays % 35 === 0) {
       return ctx.reply(`${order2.join(', ')}`);
     } else if (diffDays % 42 === 0) {
-      return ctx.reply(`${order2.join(', ')}`);
+      return ctx.reply(`${order3.join(', ')}`);
     } else if (diffDays % 49 === 0) {
       return ctx.reply(`${order4.join(', ')}`);
     } else {
